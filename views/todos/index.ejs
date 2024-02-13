@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>All Todos!</h1>
+<!-- 
+	We have todos variable because of the key on the object
+	on the render function in the controllers/todos/index function -->
+	<ul>
+		<% todos.forEach(t => { %>
+		 <li>
+			<a href="/todos/<%= t.id %>"><%= t.todo %></a>
+
+			-
+
+			<%= t.done ? 'done' : 'not done' %>
+		 </li>
+		<% }) %>
+	</ul>
+</body>
+</html>
