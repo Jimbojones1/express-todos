@@ -4,15 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
 	<h1>All Todos!</h1>
+	<a href="/todos/new">Add Todo</a>
+	
 <!-- 
 	We have todos variable because of the key on the object
 	on the render function in the controllers/todos/index function -->
 	<ul>
 		<% todos.forEach(t => { %>
 		 <li>
+			<form action="/todos/<%= t.id %>?_method=DELETE"
+				class="delete-form" method="POST">
+				<button type="submit">X</button>
+			  </form>
 			<a href="/todos/<%= t.id %>"><%= t.todo %></a>
 
 			-

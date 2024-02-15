@@ -11,6 +11,15 @@ const todosCtrl = require('../controllers/todos')
 router.get('/', todosCtrl.index);
 
 
+
+// GET request to /todos/new
+router.get('/new', todosCtrl.new);
+
+// POST request to /todos
+router.post('/', todosCtrl.create)
+
+
+router.delete('/:id', todosCtrl.delete);
 // example requests
 // /todos/1
 // /todos/2
